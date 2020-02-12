@@ -1,0 +1,32 @@
+<!-- this will recieve users information with where to delete and edit -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <p>First Name:<%= message[0].Fname %></p>
+        <p>Last Name: <%= message[0].Lname %></p>
+        <p>Phone: <%= message[0].Phone %></p>
+        <p>Email: <%= message[0].Email %></p>
+        <p>workPlace: <%= message[0].WorkPlace %></p>
+    </div>
+    
+    <form action="/delete/id" method="POST">
+        <input type="hidden" value="<%= message[0].id %>" name='id'/>
+        <button>Delete</button>
+    </form>
+    
+    <form action="contact/edit/id" method="POST">
+        <input type="hidden" name='id'/>
+        <input type='text' />
+        <button>Edit</button>
+    </form>
+</body>
+</html>
